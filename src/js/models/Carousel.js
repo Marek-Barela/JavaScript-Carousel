@@ -21,6 +21,10 @@ class Carousel {
       this.currentCarouselIndex -= 1
     }
   }
+
+  setImageByBubbleIndex(index) {
+    this.currentCarouselIndex = index
+  }
 }
 
 export default Carousel

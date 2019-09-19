@@ -33,3 +33,12 @@ DOMElements.previousSlide.addEventListener("click", () => {
   state.carousel.previousCarouselImage();
   setCarouselImage(state.carousel.currentCarouselIndex);
 });
+
+DOMElements.bubblesContainer.addEventListener("click", (e) => {
+  // Set image by clicking on bubbles
+  const bubbleData = e.target.dataset.bubble;
+  if(bubbleData) { 
+    state.carousel.setImageByBubbleIndex(parseFloat(bubbleData));
+    setCarouselImage(state.carousel.currentCarouselIndex);
+  }
+})
