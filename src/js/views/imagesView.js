@@ -2,9 +2,9 @@ import DOMElements from "./DOMSelectors";
 
 export const createImage = image => {
   const { id, url } = image;
-  const markup = `<img class="carousel-container__image" src=${url} id=${id} alt="" />`;
+  const markup = `<img class="carousel__image" src=${url} id=${id} alt="" />`;
 
-  DOMElements.carouselContainer.insertAdjacentHTML("beforeend", markup);
+  DOMElements.carousel.insertAdjacentHTML("beforeend", markup);
 }
 
 export const renderImages = images => {

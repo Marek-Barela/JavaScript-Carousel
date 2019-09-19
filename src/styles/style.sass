@@ -1,6 +1,7 @@
 body 
   margin: 0
 .app-container
+  position: relative
   height: 100vh
   min-height: 600px
   display: flex
@@ -10,7 +11,7 @@ body
   position: absolute
   width: 100%
   height: 100%
-  background-image: url("https://images.unsplash.com/photo-1432889490240-84df33d47091?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80")
+  background-image: url("https://images.unsplash.com/photo-1553602932-f93f674a9aaa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1371&q=80")
   background-repeat: no-repeat
   background-size: cover
   filter: blur(8px)
@@ -21,10 +22,13 @@ body
   background-color: white
   display: flex
   overflow: hidden
-  filter: blur(0)
 .carousel-container__image
   width: 750px
   height: 430px
+.app-container__carousel
+  width: 100%
+  display: flex
+  transition: transform 0.5s
 .carousel-container__arrow-left, .carousel-container__arrow-right
   position: absolute
   font-size: 2em
@@ -37,6 +41,7 @@ body
   cursor: pointer
   opacity: 0
   transition: opacity 0.2s
+  z-index: 100
 .carousel-container__arrow-left
   top: 0
   left: 0

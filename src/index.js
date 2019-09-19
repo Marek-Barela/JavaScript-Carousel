@@ -1,5 +1,6 @@
 import Images from "./js/models/Images";
 import { renderImages } from "./js/views/imagesView";
+import DOMElements from "./js/views/DOMSelectors";
 import "./styles/style.sass";
 
 // Global state
@@ -11,4 +12,11 @@ const imagesControler = async () => {
   renderImages(state.images.result);
 }
 
-window.addEventListener("DOMContentLoaded", imagesControler)
+const carouselControler = () => {
+  console.log("work")
+}
+
+window.addEventListener("DOMContentLoaded", imagesControler);
+
+DOMElements.nextSlide.addEventListener("click", carouselControler);
+DOMElements.previousSlide.addEventListener("click", carouselControler);
