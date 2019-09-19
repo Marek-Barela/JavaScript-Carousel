@@ -1,7 +1,7 @@
 import Images from "./js/models/Images";
 import Carousel from "./js/models/Carousel";
-import { renderImages, renderImageBubbles } from "./js/views/imagesView";
-import { setCarouselImage } from "./js/views/carouselView";
+import { renderImages } from "./js/views/imagesView";
+import { setCarouselImage, renderImageBubbles, setActiveBubble } from "./js/views/carouselView";
 import DOMElements from "./js/views/DOMSelectors";
 import "./styles/style.sass";
 
@@ -20,6 +20,7 @@ const carouselControler = () => {
   const carouselLength = state.images.result.length;
   state.carousel = new Carousel(carouselLength);
   setCarouselImage(state.carousel.currentCarouselIndex);
+  setActiveBubble(state.carousel.currentCarouselIndex);
 }
 
 window.addEventListener("DOMContentLoaded", imagesControler);
@@ -27,11 +28,13 @@ window.addEventListener("DOMContentLoaded", imagesControler);
 DOMElements.nextSlide.addEventListener("click", () => {
   state.carousel.nextCarouselImage();
   setCarouselImage(state.carousel.currentCarouselIndex);
+  setActiveBubble(state.carousel.currentCarouselIndex);
 });
 
 DOMElements.previousSlide.addEventListener("click", () => {
   state.carousel.previousCarouselImage();
   setCarouselImage(state.carousel.currentCarouselIndex);
+  setActiveBubble(state.carousel.currentCarouselIndex);
 });
 
 DOMElements.bubblesContainer.addEventListener("click", (e) => {
@@ -40,5 +43,6 @@ DOMElements.bubblesContainer.addEventListener("click", (e) => {
   if(bubbleData) { 
     state.carousel.setImageByBubbleIndex(parseFloat(bubbleData));
     setCarouselImage(state.carousel.currentCarouselIndex);
+    setActiveBubble(state.carousel.currentCarouselIndex);
   }
 })
