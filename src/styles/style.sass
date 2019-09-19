@@ -25,10 +25,26 @@ body
 .carousel-container__image
   width: 750px
   height: 430px
-.app-container__carousel
+.carousel-container__carousel
   width: 100%
   display: flex
   transition: transform 0.5s
+.carousel-container__bubbles-container
+  position: absolute
+  display: flex
+  bottom: 20px
+  left: 50%
+  transform: translateX(-50%)
+.bubbles-container__bubble
+  width: 16px
+  height: 16px
+  margin: 0 2px
+  border: 1px solid #ffffff
+  background-color: transparent
+  border-radius: 100%
+  cursor: pointer
+  &:hover
+    background-color: rgba(255,255,255, 0.6)
 .carousel-container__arrow-left, .carousel-container__arrow-right
   position: absolute
   font-size: 2em

@@ -1,5 +1,5 @@
 import Images from "./js/models/Images";
-import { renderImages } from "./js/views/imagesView";
+import { renderImages, renderImageBubbles } from "./js/views/imagesView";
 import DOMElements from "./js/views/DOMSelectors";
 import "./styles/style.sass";
 
@@ -10,6 +10,7 @@ const imagesControler = async () => {
   state.images = new Images();
   await state.images.fetchImages();
   renderImages(state.images.result);
+  renderImageBubbles(state.images.result);
 }
 
 const carouselControler = () => {
