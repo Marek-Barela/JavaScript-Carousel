@@ -7,24 +7,24 @@ class Carousel {
   }
 
   nextCarouselImage() {
-    if(this.currentCarouselIndex >= this.carouselLength - 1) {
-      this.currentCarouselIndex = 0
+    if (this.currentCarouselIndex >= this.carouselLength - 1) {
+      this.currentCarouselIndex = 0;
     } else {
-      this.currentCarouselIndex += 1
+      this.currentCarouselIndex += 1;
     }
   }
 
   previousCarouselImage() {
-    if(this.currentCarouselIndex <= 0) {
-      this.currentCarouselIndex = this.carouselLength - 1
+    if (this.currentCarouselIndex <= 0) {
+      this.currentCarouselIndex = this.carouselLength - 1;
     } else {
-      this.currentCarouselIndex -= 1
+      this.currentCarouselIndex -= 1;
     }
   }
 
   setImageByBubbleIndex(index) {
-    this.currentCarouselIndex = index
+    this.currentCarouselIndex = index;
   }
 }
 
-export default Carousel
+export default Carousel;
